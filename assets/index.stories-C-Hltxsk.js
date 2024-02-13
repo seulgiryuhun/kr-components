@@ -1,0 +1,3 @@
+import{j as a}from"./jsx-runtime-CKrituN3.js";import"./index-CBqU2yxZ.js";import"./_commonjsHelpers-BosuxZz1.js";const n="_button_test_1v745_1",c={button_test:n},e=()=>a.jsx("button",{type:"button",className:c.button_test,children:"test"});try{e.displayName="Button",e.__docgenInfo={description:"Primary UI component for user interaction",displayName:"Button",props:{}}}catch{}const i={title:"Example/Button",component:e,parameters:{layout:"centered"},tags:["autodocs"],argTypes:{}},t={args:{}};var o,r,s;t.parameters={...t.parameters,docs:{...(o=t.parameters)==null?void 0:o.docs,source:{originalSource:`{
+  args: {}
+}`,...(s=(r=t.parameters)==null?void 0:r.docs)==null?void 0:s.source}}};const d=["Default"];export{t as Default,d as __namedExportsOrder,i as default};
