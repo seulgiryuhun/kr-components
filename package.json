@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build -o dist/storybook",
-    "deploy:storybook": "gh-pages -d dist/storybook",
+    "deploy:storybook": "pnpm build:storybook && touch ./dist/storybook/.nojekyll && gh-pages -d dist/storybook -t true",
     "predeploy": "pnpm run build:storybook"
   },
   "dependencies": {
