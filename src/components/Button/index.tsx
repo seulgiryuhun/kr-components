@@ -2,10 +2,7 @@ import styles from "./index.module.scss";
 
 
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = () => {
+const Button = () => {
   
   return (
     <button
@@ -16,3 +13,5 @@ export const Button = () => {
     </button>
   );
 };
+
+export default Button
