@@ -1,0 +1,121 @@
+name: Main Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+      contents: write
+      id-token: write 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install pnpm
+        run: npm install -g pnpm
+      - name: Install dependencies
+        run: pnpm install
+      # - name: Run tests
+      #   run: pnpm test
+  
+  versioning:
+    name: Versioning
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        ref: ${{ github.head_ref }}
+        fetch-depth: 0
+
+    - name: Set Git user
+      run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+    - name: Determine version and Bump type
+      id: determine_version_bump
+      run: |
+          current_version=$(node -e "console.log(require('./package.json').version)")
+          commit_message=$(git log -1 --pretty=%B)
+
+          echo "Current Version: $current_version"
+          echo "Commit Message: $commit_message"
+
+          if [[ $commit_message == *"major"* ]]; then
+            echo "Bumping to a major version"
+            new_version=$(npm version major --no-git-tag-version)
+          elif [[ $commit_message == *"minor"* ]]; then
+            echo "Bumping to a minor version"
+            new_version=$(npm version minor --no-git-tag-version)
+          else
+            echo "Bumping to a patch version"
+            new_version=$(npm version patch --no-git-tag-version)
+          fi
+
+          echo "::set-output name=new_version::$new_version"
+
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+          tags: false
+          branch: ${{ github.ref }}
+
+    - name: Create GitHub Release
+      id: create_release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: ${{ steps.determine_version_bump.outputs.new_version }}
+        release_name: Release ${{ steps.determine_version_bump.outputs.new_version }}
+        body: |
+          Release ${{ steps.determine_version_bump.outputs.new_version }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+      
+
+  deploy-storybook:
+    name: Deploy Storybook
+    runs-on: ubuntu-latest
+    needs: versioning
+    permissions:
+      id-token: write 
+      contents: read
+      pages: write
+    steps:
+    - id: build-publish
+      env:
+        name: github-pages
+        url: ${{ steps.build-publish.outputs.page_url }}
+      uses: bitovi/github-actions-storybook-to-github-pages@v1.0.2
+      with:
+        install_command: npm i -g pnpm && pnpm install
+        build_command: pnpm run build:storybook
+        path: dist/storybook # change to your build folder     
+  
+  deploy-npm:
+    name: Deploy to NPM
+    runs-on: ubuntu-latest
+    needs: versioning
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+          registry-url: 'https://registry.npmjs.org/'
+      - name: Install dependencies
+        run: npm install -g pnpm && pnpm install
+      - name: NPM Publish
+        uses: JS-DevTools/npm-publish@v3
+        id: warm-components
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
+          package: "./package.json"
+          
+
+          

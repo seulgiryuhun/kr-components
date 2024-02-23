@@ -1,9 +1,11 @@
 {
-  "name": "kr-components",
-  "private": true,
+  "name": "warm-components",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://seulgiryuhun.github.io/kr-components",
+  "homepage": "http://seulgiryuhun.github.io/warm-components",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -11,12 +13,13 @@
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build:storybook": "storybook build -o dist/storybook",
-    "deploy:storybook": "pnpm build:storybook && touch ./dist/storybook/.nojekyll && gh-pages -d dist/storybook -t true",
+    "deploy:storybook": "touch ./dist/storybook/.nojekyll && gh-pages -d dist/storybook -t true",
     "predeploy": "pnpm run build:storybook"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "stylelint": "^16.2.1"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.14",
