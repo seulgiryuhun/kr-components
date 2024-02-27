@@ -1,11 +1,11 @@
 {
-  "name": "warm-components",
+  "name": "seulgiryuhun-components",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "private": false,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://seulgiryuhun.github.io/warm-components",
+  "homepage": "http://seulgiryuhun.github.io/seulgiryuhun",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

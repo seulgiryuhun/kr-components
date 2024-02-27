@@ -49,13 +49,13 @@ jobs:
 
           if [[ $commit_message == *"major"* ]]; then
             echo "Bumping to a major version"
-            new_version=$(npm version major --no-git-tag-version)
+            new_version=$(npm version major)
           elif [[ $commit_message == *"minor"* ]]; then
             echo "Bumping to a minor version"
-            new_version=$(npm version minor --no-git-tag-version)
+            new_version=$(npm version minor)
           else
             echo "Bumping to a patch version"
-            new_version=$(npm version patch --no-git-tag-version)
+            new_version=$(npm version patch)
           fi
 
           echo "::set-output name=new_version::$new_version"
@@ -112,7 +112,7 @@ jobs:
         run: npm install -g pnpm && pnpm install
       - name: NPM Publish
         uses: JS-DevTools/npm-publish@v3
-        id: warm-components
+        id: seulgiryuhun-components
         with:
           token: ${{ secrets.NPM_TOKEN }}
           package: "./package.json"
