@@ -1,25 +1,30 @@
-import * as path from "path";
+import * as path from 'path';
 
-import { defineConfig } from "vite";
-import dts from "vite-plugin-dts";
+import { defineConfig } from 'vitest/config';
+import react from '@vitejs/plugin-react';
+import dts from 'vite-plugin-dts';
 
 export default defineConfig({
+  test: {
+    globals: true, // 전역 객체를 사용할 수 있게 해줍니다
+    environment: 'jsdom', // node에는 dom이 없기 때문에, js로 된 dom 구현체를 사용합니다
+  },
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/lib/index.tsx"),
-        name: "index",
-        fileName: "index",
+      entry: path.resolve(__dirname, 'src/lib/index.tsx'),
+      name: 'index',
+      fileName: 'index',
     },
     rollupOptions: {
-      external: ["react"],
-        output: {
-          globals: {
-            react: "React",
-          },
+      external: ['react'],
+      output: {
+        globals: {
+          react: 'React',
         },
+      },
     },
     commonjsOptions: {
-      esmExternals: ["react"],
+      esmExternals: ['react'],
     },
   },
   plugins: [dts()],
