@@ -1,11 +1,7 @@
-import styles from './Button.module.scss';
+import type { ButtonProps } from './type';
+import classNames from 'classnames';
+import styles from './index.module.scss';
 
-const Button = () => {
-  return (
-    <button type="button" className={styles.button_test}>
-      test버튼
-    </button>
-  );
+export const Button = ({ label, variant = 'filled', size = 'md', theme = 'blue' }: ButtonProps) => {
+  return <button className={classNames(styles.btn, styles[variant], styles[size], styles[theme])}>{label}</button>;
 };
-
-export default Button;
