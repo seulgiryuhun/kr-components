@@ -1,7 +1,4 @@
-$blue: #228be6;
-$gray: #495057;
-$pink: #f06595;
-
+@use '/src/styles/libs' as *;
 @mixin button-color($color) {
   background: $color;
   &:hover {
@@ -29,21 +26,20 @@ $pink: #f06595;
   outline: none;
   border-radius: 4px;
   border: none;
-  cursor: pointer;
   justify-content: center;
   align-items: center;
 
   //color 관리
   &.blue {
-    @include button-color($blue);
+    @include button-color($BLUE-500);
   }
 
   &.gray {
-    @include button-color($gray);
+    @include button-color($GRAY-500);
   }
 
-  &.pink {
-    @include button-color($pink);
+  &.peach {
+    @include button-color($PEACH-500);
   }
 
   // 사이즈 관리
