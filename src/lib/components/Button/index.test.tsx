@@ -48,7 +48,7 @@ test('large size 버튼을 렌더한다.', async () => {
   expect(button.getByRole('button').className).toContain('lg');
 });
 
-test('정확한 theme에 맞는 버튼을 렌더한다.', async () => {
+test('theme에 맞는 버튼을 렌더한다.', async () => {
   const buttonText = 'filled button';
   const button = render(<Button label={buttonText} theme="blue" />);
 
