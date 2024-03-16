@@ -54,3 +54,9 @@ test('theme에 맞는 버튼을 렌더한다.', async () => {
 
   expect(button.getByRole('button').className).toContain('blue');
 });
+
+test('icon을 포함한 버튼을 렌더한다.', async () => {
+  const button = render(<Button variant="outlined" label="outlined Button" icon='vite' iconSize={8} />);
+
+  expect(button.getByRole('button')).toBeDefined();
+});
