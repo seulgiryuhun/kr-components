@@ -3,7 +3,9 @@ import classNames from 'classnames';
 import styles from './index.module.scss';
 import { Icon } from '../Icon';
 
-export const Button = ({ label, variant = 'filled', size = 'md', theme = 'GRAY-50', icon, iconSize = 0 }: ButtonProps) => {
+export const Button = ({ variant = 'filled', size = 'md', theme = 'gray', icon, iconSize = 0,...props }: ButtonProps) => {
+  const {children} = props
+
   return (
     <button 
       className={classNames(styles.btn, styles[variant], styles[size], styles[theme])}
@@ -13,7 +15,7 @@ export const Button = ({ label, variant = 'filled', size = 'md', theme = 'GRAY-5
         icon && <Icon type={icon} size={iconSize}/>
       }
       <span>
-        {label}
+        {children}
       </span>
     </button>
     )
