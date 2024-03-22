@@ -1,4 +1,18 @@
+@use '/src/styles/libs' as *;
 .tag {
   border-radius: 24px;
-  border: 1px gray solid;
+  padding: 6px 14px;
+  line-height: 1;
+  font-weight: 500;
+  font-size: $NORMAL;
+}
+
+.on {
+  background-color: $GRAY-800;
+  color: $WHITE;
+}
+
+.off {
+  background-color: $GRAY-100;
+  color: $GRAY-800;
 }

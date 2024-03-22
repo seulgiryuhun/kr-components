@@ -16,6 +16,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: '태그',
+    children: 'text',
   },
+  decorators: [
+    Story => (
+      <div style={{ padding: '15px', background: 'black' }}>
+        {/* 👇 Decorators in Storybook also accept a function. Replace <Story/> with Story() to enable it  */}
+        <Story />
+      </div>
+    ),
+  ],
 };
