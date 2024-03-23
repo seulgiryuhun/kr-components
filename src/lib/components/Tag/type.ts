@@ -1,3 +1,3 @@
-import { ButtonHTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react';
 
-export interface TagProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+export interface TagProps extends HTMLAttributes<HTMLSpanElement> {}
