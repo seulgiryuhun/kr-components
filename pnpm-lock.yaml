@@ -79,6 +79,9 @@ devDependencies:
   '@vitejs/plugin-react':
     specifier: ^4.2.1
     version: 4.2.1(vite@5.1.1)
+  '@vitejs/plugin-react-swc':
+    specifier: ^3.6.0
+    version: 3.6.0(vite@5.1.1)
   eslint:
     specifier: ^8.56.0
     version: 8.56.0
@@ -118,6 +121,9 @@ devDependencies:
   vite-plugin-dts:
     specifier: ^3.7.3
     version: 3.7.3(@types/node@20.11.21)(typescript@5.3.3)(vite@5.1.1)
+  vite-tsconfig-paths:
+    specifier: ^4.3.2
+    version: 4.3.2(typescript@5.3.3)(vite@5.1.1)
   vitest:
     specifier: ^1.3.1
     version: 1.3.1(@types/node@20.11.21)(jsdom@24.0.0)(sass@1.70.0)
@@ -3720,6 +3726,129 @@ packages:
       file-system-cache: 2.3.0
     dev: true
 
+  /@swc/core-darwin-arm64@1.4.8:
+    resolution: {integrity: sha512-hhQCffRTgzpTIbngSnC30vV6IJVTI9FFBF954WEsshsecVoCGFiMwazBbrkLG+RwXENTrMhgeREEFh6R3KRgKQ==}
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core-darwin-x64@1.4.8:
+    resolution: {integrity: sha512-P3ZBw8Jr8rKhY/J8d+6WqWriqngGTgHwtFeJ8MIakQJTbdYbFgXSZxcvDiERg3psbGeFXaUaPI0GO6BXv9k/OQ==}
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core-linux-arm-gnueabihf@1.4.8:
+    resolution: {integrity: sha512-PP9JIJt19bUWhAGcQW6qMwTjZOcMyzkvZa0/LWSlDm0ORYVLmDXUoeQbGD3e0Zju9UiZxyulnpjEN0ZihJgPTA==}
+    engines: {node: '>=10'}
+    cpu: [arm]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core-linux-arm64-gnu@1.4.8:
+    resolution: {integrity: sha512-HvEWnwKHkoVUr5iftWirTApFJ13hGzhAY2CMw4lz9lur2m+zhPviRRED0FCI6T95Knpv7+8eUOr98Z7ctrG6DQ==}
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core-linux-arm64-musl@1.4.8:
+    resolution: {integrity: sha512-kY8+qa7k/dEeBq9p0Hrta18QnJPpsiJvDQSLNaTIFpdM3aEM9zbkshWz8gaX5VVGUEALowCBUWqmzO4VaqM+2w==}
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core-linux-x64-gnu@1.4.8:
+    resolution: {integrity: sha512-0WWyIw432wpO/zeGblwq4f2YWam4pn8Z/Ig4KzHMgthR/KmiLU3f0Z7eo45eVmq5vcU7Os1zi/Zb65OOt09q/w==}
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core-linux-x64-musl@1.4.8:
+    resolution: {integrity: sha512-p4yxvVS05rBNCrBaSTa20KK88vOwtg8ifTW7ec/yoab0bD5EwzzB8KbDmLLxE6uziFa0sdjF0dfRDwSZPex37Q==}
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core-win32-arm64-msvc@1.4.8:
+    resolution: {integrity: sha512-jKuXihxAaqUnbFfvPxtmxjdJfs87F1GdBf33il+VUmSyWCP4BE6vW+/ReDAe8sRNsKyrZ3UH1vI5q1n64csBUA==}
+    engines: {node: '>=10'}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core-win32-ia32-msvc@1.4.8:
+    resolution: {integrity: sha512-O0wT4AGHrX8aBeH6c2ADMHgagAJc5Kf6W48U5moyYDAkkVnKvtSc4kGhjWhe1Yl0sI0cpYh2In2FxvYsb44eWw==}
+    engines: {node: '>=10'}
+    cpu: [ia32]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core-win32-x64-msvc@1.4.8:
+    resolution: {integrity: sha512-C2AYc3A2o+ECciqsJWRgIpp83Vk5EaRzHe7ed/xOWzVd0MsWR+fweEsyOjlmzHfpUxJSi46Ak3/BIZJlhZbXbg==}
+    engines: {node: '>=10'}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@swc/core@1.4.8:
+    resolution: {integrity: sha512-uY2RSJcFPgNOEg12RQZL197LZX+MunGiKxsbxmh22VfVxrOYGRvh4mPANFlrD1yb38CgmW1wI6YgIi8LkIwmWg==}
+    engines: {node: '>=10'}
+    requiresBuild: true
+    peerDependencies:
+      '@swc/helpers': ^0.5.0
+    peerDependenciesMeta:
+      '@swc/helpers':
+        optional: true
+    dependencies:
+      '@swc/counter': 0.1.3
+      '@swc/types': 0.1.5
+    optionalDependencies:
+      '@swc/core-darwin-arm64': 1.4.8
+      '@swc/core-darwin-x64': 1.4.8
+      '@swc/core-linux-arm-gnueabihf': 1.4.8
+      '@swc/core-linux-arm64-gnu': 1.4.8
+      '@swc/core-linux-arm64-musl': 1.4.8
+      '@swc/core-linux-x64-gnu': 1.4.8
+      '@swc/core-linux-x64-musl': 1.4.8
+      '@swc/core-win32-arm64-msvc': 1.4.8
+      '@swc/core-win32-ia32-msvc': 1.4.8
+      '@swc/core-win32-x64-msvc': 1.4.8
+    dev: true
+
+  /@swc/counter@0.1.3:
+    resolution: {integrity: sha512-e2BR4lsJkkRlKZ/qCHPw9ZaSxc0MVUd7gtbtaB7aMvHeJVYe8sOB8DBZkP2DtISHGSku9sCK6T6cnY0CtXrOCQ==}
+    dev: true
+
+  /@swc/types@0.1.5:
+    resolution: {integrity: sha512-myfUej5naTBWnqOCc/MdVOLVjXUXtIA+NpDrDBKJtLLg2shUjBu3cZmB/85RyitKc55+lUUyl7oRfLOvkr2hsw==}
+    dev: true
+
   /@testing-library/dom@9.3.4:
     resolution: {integrity: sha512-FlS4ZWlp97iiNWig0Muq8p+3rVDjRiYE+YKGbAqXOu9nwJFFOdL00kFpz42M+4huzYi86vAK1sOOfyOG45muIQ==}
     engines: {node: '>=14'}
@@ -4275,6 +4404,17 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
+  /@vitejs/plugin-react-swc@3.6.0(vite@5.1.1):
+    resolution: {integrity: sha512-XFRbsGgpGxGzEV5i5+vRiro1bwcIaZDIdBRP16qwm+jP68ue/S8FJTBEgOeojtVDYrbSua3XFp71kC8VJE6v+g==}
+    peerDependencies:
+      vite: ^4 || ^5
+    dependencies:
+      '@swc/core': 1.4.8
+      vite: 5.1.1(@types/node@20.11.21)(sass@1.70.0)
+    transitivePeerDependencies:
+      - '@swc/helpers'
+    dev: true
+
   /@vitejs/plugin-react@3.1.0(vite@5.1.1):
     resolution: {integrity: sha512-AfgcRL8ZBhAlc3BFdigClmTUMISmmzHn7sB2h9U1odvc5U/MjWXsAaz18b/WoppUTDBzxOJwo2VdClfUcItu9g==}
     engines: {node: ^14.18.0 || >=16.0.0}
@@ -4767,6 +4907,7 @@ packages:
   /binary-extensions@2.2.0:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
+    requiresBuild: true
 
   /bl@4.1.0:
     resolution: {integrity: sha512-1W07cM9gS6DcLperZfFSj+bWLtaPGSOHWhPiGzXmvVJbRLdG82sH/Kn8EtW1VqWVA54AKf2h5k5BbnIbwF3h6w==}
@@ -5971,6 +6112,7 @@ packages:
   /fill-range@7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}
     engines: {node: '>=8'}
+    requiresBuild: true
     dependencies:
       to-regex-range: 5.0.1
 
@@ -6330,6 +6472,10 @@ packages:
     resolution: {integrity: sha512-xYfnw62CKG8nLkZBfWbhWwDw02CHty86jfPcc2cr3ZfeuK9ysoVPPEUxf21bAD/rWAgk52SuBrLJlefNy8mvFg==}
     dev: false
 
+  /globrex@0.1.2:
+    resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
+    dev: true
+
   /gopd@1.0.1:
     resolution: {integrity: sha512-d65bNlIadxvpb/A2abVdlqKqV563juRnZ1Wtk6s1sIR8uNsXR70xqIzVqxVf1eTqDunwT2MkczEeaezCKTZhwA==}
     dependencies:
@@ -6603,6 +6749,7 @@ packages:
   /is-binary-path@2.1.0:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
     engines: {node: '>=8'}
+    requiresBuild: true
     dependencies:
       binary-extensions: 2.2.0
 
@@ -6695,6 +6842,7 @@ packages:
   /is-number@7.0.0:
     resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
     engines: {node: '>=0.12.0'}
+    requiresBuild: true
 
   /is-path-cwd@2.2.0:
     resolution: {integrity: sha512-w942bTcih8fdJPJmQHFzkS76NEP8Kzzvmw92cXsazb8intwLqPibPPdXf4ANdKV3rYMuuQYGIWtvz9JilB3NFQ==}
@@ -8233,6 +8381,7 @@ packages:
   /readdirp@3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
+    requiresBuild: true
     dependencies:
       picomatch: 2.3.1
 
@@ -9005,6 +9154,7 @@ packages:
   /to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
+    requiresBuild: true
     dependencies:
       is-number: 7.0.0
 
@@ -9057,6 +9207,19 @@ packages:
   /ts-dedent@2.2.0:
     resolution: {integrity: sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==}
     engines: {node: '>=6.10'}
+    dev: true
+
+  /tsconfck@3.0.3(typescript@5.3.3):
+    resolution: {integrity: sha512-4t0noZX9t6GcPTfBAbIbbIU4pfpCwh0ueq3S4O/5qXI1VwK1outmxhe9dOiEWqMz3MW2LKgDTpqWV+37IWuVbA==}
+    engines: {node: ^18 || >=20}
+    hasBin: true
+    peerDependencies:
+      typescript: ^5.0.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      typescript: 5.3.3
     dev: true
 
   /tslib@1.14.1:
@@ -9387,6 +9550,23 @@ packages:
       - '@types/node'
       - rollup
       - supports-color
+    dev: true
+
+  /vite-tsconfig-paths@4.3.2(typescript@5.3.3)(vite@5.1.1):
+    resolution: {integrity: sha512-0Vd/a6po6Q+86rPlntHye7F31zA2URZMbH8M3saAZ/xR9QoGN/L21bxEGfXdWmFdNkqPpRdxFT7nmNe12e9/uA==}
+    peerDependencies:
+      vite: '*'
+    peerDependenciesMeta:
+      vite:
+        optional: true
+    dependencies:
+      debug: 4.3.4
+      globrex: 0.1.2
+      tsconfck: 3.0.3(typescript@5.3.3)
+      vite: 5.1.1(@types/node@20.11.21)(sass@1.70.0)
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
     dev: true
 
   /vite@5.1.1(@types/node@20.11.21)(sass@1.70.0):
