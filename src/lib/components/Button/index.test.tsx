@@ -9,7 +9,7 @@ test('정확한 버튼 children을 렌더한다.', async () => {
     </Button>,
   );
 
-  expect(button.getByRole('button')).toBeDefined();
+  expect(button.getByRole('button', { name: 'text' })).toBeDefined();
 });
 
 test('filled variant에 따른 버튼을 렌더한다.', async () => {

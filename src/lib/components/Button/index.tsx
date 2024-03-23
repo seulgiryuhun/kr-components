@@ -6,11 +6,7 @@ export const Button = ({ variant = 'filled', size = 'md', theme = 'gray', ...pro
   const { children, className } = props;
 
   return (
-    <button
-      className={classNames(styles.btn, styles[variant], styles[size], styles[theme], className)}
-      type="button"
-      {...props}
-    >
+    <button className={classNames(styles.btn, styles[variant], styles[size], styles[theme], className)} {...props}>
       {children}
     </button>
   );
