@@ -5,14 +5,6 @@
   line-height: 1;
   font-weight: 500;
   font-size: $NORMAL;
-}
 
-.on {
-  background-color: $GRAY-800;
-  color: $WHITE;
-}
-
-.off {
-  background-color: $GRAY-100;
-  color: $GRAY-800;
+  // TODO : emotion으로 바꿀떄 background,size,color 커스텀가능하게 변경
 }
