@@ -2,8 +2,12 @@ import { expect, test } from 'vitest';
 import { render } from '@testing-library/react';
 import { Button } from './index';
 
-test('정확한 버튼 label을 렌더한다.', async () => {
-  const button = render(<Button variant="filled" theme="gray" />);
+test('정확한 버튼 children을 렌더한다.', async () => {
+  const button = render(
+    <Button variant="filled" theme="gray">
+      <span>text</span>
+    </Button>,
+  );
 
   expect(button.getByRole('button')).toBeDefined();
 });
@@ -48,9 +52,4 @@ test('theme에 맞는 버튼을 렌더한다.', async () => {
   const button = render(<Button theme="gray" />);
 
   expect(button.getByRole('button').className).toContain('gray');
-});
-
-test('icon을 포함한 버튼을 렌더한다.', async () => {
-  const button = render(<Button variant="outlined" theme="gray" icon="vite" iconSize={8} />);
-  expect(button.getByRole('button')).toBeInTheDocument();
 });
