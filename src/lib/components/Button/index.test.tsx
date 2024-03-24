@@ -3,11 +3,7 @@ import { render } from '@testing-library/react';
 import { Button } from './index';
 
 test('정확한 버튼 children을 렌더한다.', async () => {
-  const button = render(
-    <Button variant="filled" theme="gray">
-      <span>text</span>
-    </Button>,
-  );
+  const button = render(<Button variant="filled" theme="gray" label="text" />);
 
   expect(button.getByRole('button', { name: 'text' })).toBeDefined();
 });
