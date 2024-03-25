@@ -33,7 +33,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    label: 'Button',
+    children: <span>text</span>,
     variant: 'filled',
     size: 'sm',
     theme: 'blue',

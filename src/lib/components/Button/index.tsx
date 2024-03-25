@@ -12,12 +12,12 @@ export const Button = ({
   iconSize = 0,
   ...props
 }: ButtonProps) => {
-  const { className } = props;
+  const { className, children } = props;
 
   return (
     <button className={classNames(styles.btn, styles[variant], styles[size], styles[theme], className)} {...props}>
       {icon && <Icon type={icon} size={iconSize} />}
-      <span>{label}</span>
+      {children}
     </button>
   );
 };
