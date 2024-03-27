@@ -17,7 +17,7 @@ export const Button = ({
   return (
     <button className={classNames(styles.btn, styles[variant], styles[size], styles[theme], className)} {...props}>
       {icon && <Icon type={icon} size={iconSize} />}
-      {children}
+      <span>{children}</span>
     </button>
   );
 };
