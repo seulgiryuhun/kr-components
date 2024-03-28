@@ -1,37 +1,32 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button } from '@/main';
+import { Icon } from '@/main';
+import { TYPE } from './type';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Example/Button',
-  component: Button,
+  title: 'Example/Icon',
+  component: Icon,
 
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
-    variant: {
-      options: ['filled', 'outlined', 'text'],
+    type: {
+      options: TYPE,
       control: { type: 'radio' },
     },
     size: {
-      options: ['sm', 'md', 'lg'],
-      control: { type: 'radio' },
-    },
-    theme: {
-      options: ['blue', 'gray', 'peach'],
+      options: [8, 16, 24, 32],
       control: { type: 'radio' },
     },
   },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof Icon>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    label: 'Button Test',
-    variant: 'filled',
-    size: 'sm',
-    theme: 'blue',
+    type: 'vite',
+    size: 16,
   },
 };
