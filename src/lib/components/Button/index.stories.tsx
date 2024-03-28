@@ -21,6 +21,10 @@ const meta = {
       options: ['blue', 'gray', 'peach'],
       control: { type: 'radio' },
     },
+    icon: {
+      options: [undefined, 'vite'],
+      control: { type: 'radio' },
+    },
   },
 } satisfies Meta<typeof Button>;
 
@@ -29,9 +33,11 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    label: 'Button Test',
+    children: <span>text</span>,
     variant: 'filled',
     size: 'sm',
     theme: 'blue',
+    icon: 'vite',
+    iconSize: 16,
   },
 };
