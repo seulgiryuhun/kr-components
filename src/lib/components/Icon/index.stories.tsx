@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Icon } from '@/main';
-import { TYPE } from './type';
+import { ICON_TYPE } from './type';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -11,7 +11,7 @@ const meta = {
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
     type: {
-      options: TYPE,
+      options: ICON_TYPE,
       control: { type: 'radio' },
     },
     size: {
