@@ -6,7 +6,7 @@ test('Icon 컴포넌트가 주어진 props에 따라 올바르게 렌더링되�
   const { getByTestId } = render(<Icon type="vite" size={16} />);
   const iconElement = getByTestId('icon-button');
 
-  expect(iconElement.style.backgroundImage).toContain('url(/vite.svg)');
+  expect(iconElement.style.backgroundImage).toContain('url(./vite.svg)');
   expect(iconElement.style.width).toBe('16px');
   expect(iconElement.style.height).toBe('16px');
 });

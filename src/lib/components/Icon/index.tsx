@@ -3,7 +3,7 @@ import type { IconProps, IconType } from './type';
 
 export const Icon = ({ type, size = 16 }: IconProps) => {
   const makeIconUrl = (type: IconType) => {
-    return `/${type}.svg`;
+    return `./${type}.svg`;
   };
 
   return (
