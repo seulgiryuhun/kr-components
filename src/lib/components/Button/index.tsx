@@ -7,7 +7,6 @@ export const Button = ({
   variant = 'filled',
   size = 'md',
   theme = 'gray',
-  label,
   icon,
   iconSize = 0,
   ...props
