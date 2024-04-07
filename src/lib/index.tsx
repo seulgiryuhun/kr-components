@@ -1,3 +1,3 @@
-export * from './components/Button';
-export * from './components/Icon';
-export * from './components/Tag';
+export { Button } from './components/Button';
+export { Icon } from './components/Icon';
+export { Tag } from './components/Tag';
