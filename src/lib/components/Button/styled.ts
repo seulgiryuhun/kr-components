@@ -30,7 +30,7 @@ const setVariant = (variant: ButtonVariant, color: ButtonColorType) => {
   }
 };
 
-export const Button = styled.button<ButtonProps>`
+export const StyledButton = styled.button<ButtonProps>`
   display: inline-flex;
   gap: 4px;
   justify-content: center;

@@ -1,8 +1,8 @@
 import { Icon } from '../Icon';
-import { Button } from './styled';
+import { StyledButton } from './styled';
 import { ButtonProps } from './type';
 
-export const DefaultButton = ({
+export const Button = ({
   variant = 'filled',
   color = 'gray',
   width = 100,
@@ -14,9 +14,9 @@ export const DefaultButton = ({
   const { children } = props;
 
   return (
-    <Button color={color} variant={variant} width={width} height={height} {...props}>
+    <StyledButton color={color} variant={variant} width={width} height={height} {...props}>
       {icon && <Icon type={icon} size={iconSize} />}
       <span>{children}</span>
-    </Button>
+    </StyledButton>
   );
 };

@@ -1,6 +1,6 @@
 import { expect, test, vi } from 'vitest';
 import { fireEvent, render } from '@testing-library/react';
-import { DefaultButton as Button } from './index';
+import { Button } from './index';
 
 test('정확한 버튼 텍스트를 렌더한다.', () => {
   const { getByText } = render(
