@@ -58,7 +58,7 @@ export const colors = {
   blue400: '#94ADF0',
   blue500: '#5E85E8',
   blue600: '#295CE0',
-};
+} as const;
 export type Colors = typeof colors;
 export type ColorType = KeyType<Colors>;
 export type ColorValueType = Colors[ColorType];
