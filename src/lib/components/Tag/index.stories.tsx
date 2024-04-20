@@ -7,6 +7,7 @@ const meta = {
   component: Tag,
   argTypes: {
     children: { control: 'text', description: '켰을때 배경' },
+    color: { control: 'color', description: '색상' },
   },
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
 } satisfies Meta<typeof Tag>;
@@ -17,5 +18,8 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: 'text',
+    color: 'gray',
+    isReadOnly: false,
+    textColor: 'white',
   },
 };

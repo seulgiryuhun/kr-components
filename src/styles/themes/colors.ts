@@ -3,6 +3,7 @@ export type KeyType<T extends object> = keyof T;
 export const colors = {
   white: '#FFFFFF',
   black: '#000000',
+  gray: '#2c2c2c',
 
   // gray
   gray10: '#F7F7F7',
