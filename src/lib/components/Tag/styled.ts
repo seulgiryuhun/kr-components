@@ -17,5 +17,5 @@ export const StyledTag = styled.button<TagProps & { isActive: boolean }>`
     cursor: default;
   }
   ${({ isActive, color, textColor }) =>
-    isActive ? `background-color: ${color}; color: ${textColor};` : `background-color: ${textColor}; color: ${color};`}
+    isActive ? `background-color: ${textColor}; color: ${color};` : `background-color: ${color}; color: ${textColor};`}
 `;

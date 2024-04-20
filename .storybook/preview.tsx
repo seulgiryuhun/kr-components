@@ -1,3 +1,6 @@
+import React from 'react';
+import { Global } from '@emotion/react';
+import { globalStyles } from '../src/styles/global';
 import type { Preview } from '@storybook/react';
 
 const preview: Preview = {
@@ -11,5 +14,14 @@ const preview: Preview = {
     },
   },
 };
+
+export const decorators = [
+  Story => (
+    <>
+      <Global styles={globalStyles} />
+      <Story />
+    </>
+  ),
+];
 
 export default preview;
