@@ -7,6 +7,16 @@ import type { ButtonColorType, ButtonProps, ButtonVariant } from './type';
 
 const setVariant = (variant: ButtonVariant, color: ButtonColorType) => {
   const numberedColor = `${color}500` as ColorType;
+  const hasColor = colors[numberedColor] !== undefined;
+  if (!hasColor) {
+    console.error(`Color ${color} is not defined in the theme`);
+    return css`
+      background-color: ${colors['gray500']};
+      color: white;
+      border: none;
+    `;
+  }
+
   switch (variant) {
     case 'outlined':
       return css`
