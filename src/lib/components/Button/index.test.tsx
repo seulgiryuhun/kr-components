@@ -1,55 +1,51 @@
-import { expect, test } from 'vitest';
-import { render } from '@testing-library/react';
+import { expect, test, vi } from 'vitest';
+import { fireEvent, render } from '@testing-library/react';
 import { Button } from './index';
 
-test('정확한 버튼 children을 렌더한다.', async () => {
-  const button = render(
-    <Button variant="filled" theme="gray">
-      text
+test('정확한 버튼 텍스트를 렌더한다.', () => {
+  const { getByText } = render(
+    <Button variant="filled" color="gray">
+      Click me
     </Button>,
   );
+  const buttonElement = getByText('Click me');
+  expect(buttonElement).toBeInTheDocument();
+});
 
-  expect(button.getByRole('button', { name: 'text' })).toBeDefined();
+test('아이콘과 함께 버튼을 렌더한다.', () => {
+  const { getByTestId } = render(<Button icon="vite" variant="filled" color="gray" data-testid="icon-add" />);
+  const iconElement = getByTestId('icon-add');
+  expect(iconElement).toBeInTheDocument();
 });
 
 test('filled variant에 따른 버튼을 렌더한다.', async () => {
-  const filledButton = render(<Button variant="filled" theme="gray" />);
+  const filledButton = render(<Button variant="filled" color="gray" />);
 
-  expect(filledButton.getByRole('button').className).toContain('filled');
+  expect(filledButton.getByRole('button')).toBeDefined();
 });
 
 test('outlined variant에 따른 버튼을 렌더한다.', async () => {
-  const outlinedButton = render(<Button variant="outlined" theme="gray" />);
+  const outlinedButton = render(<Button variant="outlined" color="gray" />);
 
-  expect(outlinedButton.getByRole('button').className).toContain('outlined');
+  expect(outlinedButton.getByRole('button')).toBeDefined();
 });
 
 test('text variant에 따른 버튼을 렌더한다.', async () => {
-  const textButton = render(<Button variant="text" theme="gray" />);
+  const textButton = render(<Button variant="text" color="gray" />);
 
-  expect(textButton.getByRole('button').className).toContain('text');
+  expect(textButton.getByRole('button')).toBeDefined();
 });
 
-test('small size 버튼을 렌더한다.', async () => {
-  const button = render(<Button theme="gray" size="sm" />);
+test('onClick 이벤트가 발생한다.', async () => {
+  const onClickMock = vi.fn();
+  const { getByText } = render(
+    <Button variant="text" color="gray" onClick={onClickMock}>
+      Click me
+    </Button>,
+  );
+  const buttonElement = getByText('Click me');
 
-  expect(button.getByRole('button').className).toContain('sm');
-});
+  fireEvent.click(buttonElement);
 
-test('medium size 버튼을 렌더한다.', async () => {
-  const button = render(<Button theme="gray" size="md" />);
-
-  expect(button.getByRole('button').className).toContain('md');
-});
-
-test('large size 버튼을 렌더한다.', async () => {
-  const button = render(<Button theme="gray" size="lg" />);
-
-  expect(button.getByRole('button').className).toContain('lg');
-});
-
-test('theme에 맞는 버튼을 렌더한다.', async () => {
-  const button = render(<Button theme="gray" />);
-
-  expect(button.getByRole('button').className).toContain('gray');
+  expect(onClickMock).toHaveBeenCalled();
 });

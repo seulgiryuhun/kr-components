@@ -1,4 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import './styles/_global.scss';
+import './styles/global';
+import './styles/themes';
 
 export * from './lib';

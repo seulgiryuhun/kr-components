@@ -1,22 +1,22 @@
-import type { ButtonProps } from './type';
-import classNames from 'classnames';
-import styles from './index.module.scss';
 import { Icon } from '../Icon';
+import { StyledButton } from './styled';
+import { ButtonProps } from './type';
 
 export const Button = ({
   variant = 'filled',
-  size = 'md',
-  theme = 'gray',
-  icon,
+  color = 'gray',
+  width = 100,
+  height = 40,
   iconSize = 0,
+  icon,
   ...props
 }: ButtonProps) => {
-  const { className, children } = props;
+  const { children } = props;
 
   return (
-    <button className={classNames(styles.btn, styles[variant], styles[size], styles[theme], className)} {...props}>
+    <StyledButton color={color} variant={variant} width={width} height={height} {...props}>
       {icon && <Icon type={icon} size={iconSize} />}
       <span>{children}</span>
-    </button>
+    </StyledButton>
   );
 };

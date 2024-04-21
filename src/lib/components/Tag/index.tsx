@@ -1,11 +1,24 @@
-import classNames from 'classnames';
 import { TagProps } from './type';
-import styles from './index.module.scss';
+import { StyledTag } from './styled';
+import { useState } from 'react';
 
-export const Tag = ({ className, children, ...props }: TagProps) => {
+export const Tag = ({ children, color, isReadOnly, textColor = 'white', onClick, ...props }: TagProps) => {
+  const [isActive, setIsActive] = useState(false);
+  const handleTagClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    onClick?.(e);
+    setIsActive(!isActive);
+  };
+
   return (
-    <span className={classNames(className, styles['tag'])} {...props}>
+    <StyledTag
+      color={color}
+      textColor={textColor}
+      onClick={handleTagClick}
+      isActive={isActive}
+      disabled={isReadOnly}
+      {...props}
+    >
       {children}
-    </span>
+    </StyledTag>
   );
 };

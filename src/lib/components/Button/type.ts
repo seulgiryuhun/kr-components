@@ -2,14 +2,13 @@ import type { ButtonHTMLAttributes } from 'react';
 import type { IconType } from '../Icon/type';
 
 export type ButtonVariant = 'filled' | 'outlined' | 'text';
-export type ButtonSize = 'sm' | 'md' | 'lg';
-export type Theme = 'blue' | 'gray' | 'peach';
+export type ButtonColorType = 'blue' | 'gray' | 'peach' | 'green';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  theme: Theme;
-  variant?: ButtonVariant;
-  size?: ButtonSize;
+  color: ButtonColorType;
+  variant: ButtonVariant;
+  width?: number;
+  height?: number;
   icon?: IconType;
   iconSize?: number;
-  label?: string;
 }

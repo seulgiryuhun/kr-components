@@ -2,11 +2,13 @@ import { expect, test } from 'vitest';
 import { render } from '@testing-library/react';
 import { Icon } from './index';
 
-test('Icon 컴포넌트가 주어진 props에 따라 올바르게 렌더링되는지 확인한다.', async () => {
+test('정확한 아이콘을 렌더한다.', () => {
+  const iconType = 'vite';
+  const iconSize = 16;
   const { getByTestId } = render(<Icon type="vite" size={16} />);
-  const iconElement = getByTestId('icon-button');
+  const iconElement = getByTestId('icon');
 
-  expect(iconElement.style.backgroundImage).toContain('url(./vite.svg)');
-  expect(iconElement.style.width).toBe('16px');
-  expect(iconElement.style.height).toBe('16px');
+  expect(iconElement).toBeInTheDocument();
+  expect(iconElement).toHaveAttribute('type', iconType);
+  expect(iconElement).toHaveAttribute('size', String(iconSize));
 });
