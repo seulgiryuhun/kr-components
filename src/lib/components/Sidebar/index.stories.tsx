@@ -24,6 +24,7 @@ export const Default: Story = {
       border는 storybook에서 확인하기 위해 추가함
       <div style={{ border: '1px gray solid', width: 'fit-content', height: '1000px', background: 'gray' }}>
         <Sidebar
+          onXBtnClick={() => console.log('X')}
           links={[
             <Link to="all">all</Link>,
             <Link to={`/side-project`}>side-project</Link>,
