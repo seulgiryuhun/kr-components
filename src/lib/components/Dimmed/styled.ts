@@ -1,0 +1,24 @@
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+
+export const DimmedWrapper = styled.div<{ isOpen: boolean }>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+
+  ${({ isOpen }) =>
+    isOpen
+      ? css`
+          visibility: visible;
+          opacity: 1;
+          transition: opacity 0.5s;
+        `
+      : css`
+          visibility: hidden;
+          opacity: 0;
+          transition: all 0.5s;
+        `}
+`;
