@@ -1,4 +1,4 @@
-import { colors } from '@/styles/themes';
+import { colors, zIndex } from '@/styles/themes';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
@@ -11,6 +11,7 @@ export const SidebarWrapper = styled.div<{ isOpen: boolean; right: boolean; head
 
   position: fixed;
   top: ${({ headerHeight }) => `${headerHeight}px`};
+  z-index: ${zIndex['focus-0']};
 
   ${({ right, isOpen }) => {
     if (right)
@@ -23,7 +24,7 @@ export const SidebarWrapper = styled.div<{ isOpen: boolean; right: boolean; head
         left: ${isOpen ? '0' : '-300px'};
         transition: left 0.3s ease-in-out;
       `;
-  }}
+  }};
 `;
 
 export const SidebarHeader = styled.div`
