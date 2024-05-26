@@ -1,4 +1,4 @@
 export interface SidebarProps {
-  onXBtnClick?: () => void;
+  onXBtnClick: () => void;
   links: JSX.Element[];
 }
