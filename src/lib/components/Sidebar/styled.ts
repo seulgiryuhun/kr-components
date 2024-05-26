@@ -2,12 +2,28 @@ import { colors } from '@/styles/themes';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-export const SidebarWrapper = styled.div`
+export const SidebarWrapper = styled.div<{ isOpen: boolean; right: boolean; headerHeight: number }>`
   display: flex;
   flex-direction: column;
   width: 260px;
   height: 100%;
   background-color: ${colors.white};
+
+  position: fixed;
+  top: ${({ headerHeight }) => `${headerHeight}px`};
+
+  ${({ right, isOpen }) => {
+    if (right)
+      return css`
+        right: ${isOpen ? '0' : '-300px'};
+        transition: right 0.3s ease-in-out;
+      `;
+    else
+      return css`
+        left: ${isOpen ? '0' : '-300px'};
+        transition: left 0.3s ease-in-out;
+      `;
+  }}
 `;
 
 export const SidebarHeader = styled.div`
