@@ -1,10 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import { Dimmed } from '@/lib/components/Dimmed';
-import { Sidebar } from '@/lib/components/Sidebar';
-
 import type { Meta, StoryObj } from '@storybook/react';
 import { useState } from 'react';
-import { Link, MemoryRouter } from 'react-router-dom';
 
 const meta: Meta<typeof Dimmed> = {
   title: 'example/Dimmed',
@@ -39,42 +36,6 @@ export const Default: Story = {
           <div style={{ background: 'white', height: '300px' }}>hihi</div>
         </Dimmed>
       </>
-    );
-  },
-};
-
-export const SidebarDimmed: StoryObj<typeof Sidebar> = {
-  args: {
-    headerHeight: 0,
-    right: true,
-  },
-  render: args => {
-    const [isOpen, setIsOpen] = useState(false);
-    return (
-      <MemoryRouter>
-        <button onClick={() => setIsOpen(true)}>sidebar</button>
-        <Dimmed isOpen={isOpen} onClose={() => setIsOpen(false)}>
-          <Sidebar
-            isOpen={isOpen}
-            headerHeight={args.headerHeight}
-            onXBtnClick={() => setIsOpen(false)}
-            right={args.right}
-            links={[
-              <Link to="all">all</Link>,
-              <Link to={`/side-project`}>side-project</Link>,
-              <Link to={`/about`}>about</Link>,
-              <Link to={`/component`}>component</Link>,
-              <Link to={`/react`}>react</Link>,
-              <Link to={`/next`}>next</Link>,
-              <Link to={`/browser`}>browser</Link>,
-              <Link to={`/2023`}>2023</Link>,
-              <a href="https://www.spacecloud.kr" target="_blank">
-                외부링크 스클?? ㅋㅋ
-              </a>,
-            ]}
-          />
-        </Dimmed>
-      </MemoryRouter>
     );
   },
 };

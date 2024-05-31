@@ -12,7 +12,6 @@ export const DimmedWrapper = styled.div<{ isOpen: boolean }>`
   ${({ isOpen }) =>
     isOpen
       ? css`
-          visibility: visible;
           opacity: 1;
           transition: opacity 0.5s;
         `
