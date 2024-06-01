@@ -10,7 +10,7 @@ export const DimmedWrapper = styled.div<{ isOpen: boolean }>`
   height: 100vh;
   background: rgba(0, 0, 0, 0.6);
 
-  z-index: ${zIndex['background-0']};
+  z-index: ${zIndex['background']['0']};
   ${({ isOpen }) =>
     isOpen
       ? css`

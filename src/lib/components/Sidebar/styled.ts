@@ -11,7 +11,7 @@ export const SidebarWrapper = styled.div<{ isOpen: boolean; right: boolean; head
 
   position: fixed;
   top: ${({ headerHeight }) => `${headerHeight}px`};
-  z-index: ${zIndex['focus-0']};
+  z-index: ${zIndex['focus']['0']};
 
   ${({ right, isOpen }) => {
     if (right)
