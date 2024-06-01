@@ -1,6 +1,6 @@
 export interface SidebarProps {
   onXBtnClick: () => void;
-  links: JSX.Element[];
+  links: { isExternal: boolean; name: string; href: string }[];
   right?: boolean;
   headerHeight?: number;
   isOpen: boolean;
