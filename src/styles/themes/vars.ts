@@ -1,10 +1,14 @@
 export const zIndex = {
-  'background-0': 998,
-  'background-1': 98,
-  'background-2': 65,
-  'background-3': 32,
-  'focus-0': 999,
-  'focus-1': 99,
-  'focus-2': 66,
-  'focus-3': 33,
+  background: {
+    '0': 1000,
+    '1': 300,
+    '2': 200,
+    '3': 100,
+  },
+  focus: {
+    '0': 1010,
+    '1': 310,
+    '2': 210,
+    '3': 110,
+  },
 };
