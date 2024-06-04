@@ -1,11 +1,8 @@
 import { DimmedWrapper } from '@/lib/components/Dimmed/styled';
-import { PropsWithChildren, useEffect } from 'react';
+import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { DimmedProps } from './type';
 
-export interface DimmedProps extends PropsWithChildren {
-  onClose: () => void;
-  isOpen: boolean;
-}
 export const Dimmed = ({ onClose, children, isOpen }: DimmedProps) => {
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : 'auto';

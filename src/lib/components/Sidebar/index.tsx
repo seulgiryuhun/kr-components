@@ -1,5 +1,5 @@
 import { SidebarHeader, SidebarNav, SidebarNavItem, SidebarWrapper } from '@/lib/components/Sidebar/styled';
-import { SidebarProps } from '@/lib/components/Sidebar/types';
+import { SidebarProps } from '@/lib/components/Sidebar/type';
 import { useState } from 'react';
 import X from '@/assets/x_icon.svg';
 import { Link } from 'react-router-dom';
