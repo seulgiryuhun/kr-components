@@ -1,7 +1,7 @@
 import { SidebarHeader, SidebarNav, SidebarNavItem, SidebarWrapper } from '@/lib/components/Sidebar/styled';
 import { SidebarProps } from '@/lib/components/Sidebar/type';
 import { useState } from 'react';
-import X from '@/assets/x_icon.svg';
+// import X from '@/assets/x_icon.svg';
 import { Link } from 'react-router-dom';
 import { Dimmed } from '@/lib/components/Dimmed';
 
@@ -11,9 +11,7 @@ export const Sidebar = ({ links, onXBtnClick, headerHeight = 0, isOpen, right = 
     <Dimmed isOpen={isOpen} onClose={onXBtnClick}>
       <SidebarWrapper isOpen={isOpen} headerHeight={headerHeight} right={right}>
         <SidebarHeader>
-          <button onClick={onXBtnClick}>
-            <img src={X} alt="X" />
-          </button>
+          <button onClick={onXBtnClick}>{/* <img src={X} alt="X" /> */}</button>
         </SidebarHeader>
         <SidebarNav>
           <ul>

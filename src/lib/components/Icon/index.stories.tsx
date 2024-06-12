@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Icon } from '@/main';
+import { Icon } from '@/lib/components/Icon';
 import { ICON_TYPE } from './type';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
