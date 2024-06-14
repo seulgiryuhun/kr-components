@@ -5,8 +5,8 @@ export type ButtonVariant = 'filled' | 'outlined' | 'text';
 export type ButtonColorType = 'blue' | 'gray' | 'peach' | 'green';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  color: ButtonColorType;
-  variant: ButtonVariant;
+  color?: ButtonColorType;
+  variant?: ButtonVariant;
   width?: number;
   height?: number;
   icon?: IconType;
