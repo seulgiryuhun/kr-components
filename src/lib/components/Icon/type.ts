@@ -1,4 +1,4 @@
-export const ICON_TYPE = ['vite'] as const;
+export const ICON_TYPE = ['vite', 'x_icon', 'hambuger_icon'] as const;
 export type IconType = (typeof ICON_TYPE)[number];
 
 export interface IconProps extends React.HTMLAttributes<HTMLElement> {

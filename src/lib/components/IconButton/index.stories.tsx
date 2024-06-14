@@ -15,7 +15,7 @@ const meta = {
       control: { type: 'radio' },
     },
     size: {
-      options: [8, 16, 24, 32],
+      options: [8, 16, 24, 32, 40],
       control: { type: 'radio' },
     },
   },
