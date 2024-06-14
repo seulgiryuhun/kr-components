@@ -5,7 +5,7 @@ import { ColorType } from '@/styles/themes/colors';
 
 import type { ButtonColorType, ButtonProps, ButtonVariant } from './type';
 
-const setVariant = (variant: ButtonVariant, color: ButtonColorType) => {
+const setVariant = (variant?: ButtonVariant, color?: ButtonColorType) => {
   const numberedColor = `${color}500` as ColorType;
   const hasColor = colors[numberedColor] !== undefined;
   if (!hasColor) {
