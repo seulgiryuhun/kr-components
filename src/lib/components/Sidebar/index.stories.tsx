@@ -2,7 +2,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Sidebar } from '@/lib/components/Sidebar';
-import { MemoryRouter } from 'react-router-dom';
+import { Link, MemoryRouter } from 'react-router-dom';
 import { useState } from 'react';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -40,12 +40,17 @@ export const Default: Story = {
             onXBtnClick={() => setIsOpen(false)}
             right={args.right}
             links={[
-              { name: 'all', href: 'all', isExternal: false },
-              {
-                name: '스클',
-                isExternal: true,
-                href: 'https://www.spacecloud.kr',
-              },
+              <Link to="all">all</Link>,
+              <Link to={`/side-project`}>side-project</Link>,
+              <Link to={`/about`}>about</Link>,
+              <Link to={`/component`}>component</Link>,
+              <Link to={`/react`}>react</Link>,
+              <Link to={`/next`}>next</Link>,
+              <Link to={`/browser`}>browser</Link>,
+              <Link to={`/2023`}>2023</Link>,
+              <a href="https://www.spacecloud.kr" target="_blank">
+                외부링크 스클?? ㅋㅋ
+              </a>,
             ]}
           />
         </div>
