@@ -4,3 +4,4 @@ export { Dimmed } from './components/Dimmed';
 export { Icon } from './components/Icon';
 export { Sidebar } from './components/Sidebar';
 export { Tag } from './components/Tag';
+export { Tags } from './components/Tags';
