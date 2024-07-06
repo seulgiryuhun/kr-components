@@ -1,6 +1,5 @@
 import { SidebarHeader, SidebarNav, SidebarNavItem, SidebarWrapper } from '@/lib/components/Sidebar/styled';
 import { useState } from 'react';
-import X from '@/assets/x_icon.svg';
 import { Dimmed } from '@/lib/components/Dimmed';
 import { SidebarProps } from '@/lib/components/Sidebar/type';
 
@@ -17,7 +16,7 @@ export const Sidebar = ({ links, onXBtnClick, headerHeight = 0, isOpen, right = 
       <SidebarWrapper isOpen={isOpen} headerHeight={headerHeight} right={right}>
         <SidebarHeader>
           <button onClick={onXBtnClick}>
-            <img src={X} alt="X" />
+            <img src={'/x_icon.svg'} alt="X" />
           </button>
         </SidebarHeader>
         <SidebarNav>
