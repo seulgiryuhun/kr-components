@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { expect, test } from 'vitest';
-import { Tag } from '.';
+import { Tag } from '@/lib/components/Tag';
 
 test('Tag의 children이 렌더링된다.', async () => {
   const tag = render(
