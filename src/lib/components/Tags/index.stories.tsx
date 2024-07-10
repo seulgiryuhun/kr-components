@@ -120,9 +120,21 @@ export const Default: Story = {
         textColor: 'white',
       },
       {
-        children: 'text9',
+        children: 'read only 끝',
         color: 'gray',
         isReadOnly: true,
+        textColor: 'white',
+      },
+      {
+        children: 'not readOnly',
+        color: 'gray',
+        isReadOnly: false,
+        textColor: 'white',
+      },
+      {
+        children: 'not readOnly',
+        color: 'gray',
+        isReadOnly: false,
         textColor: 'white',
       },
     ],

@@ -6,7 +6,7 @@ export const StyledTag = styled.button<TagProps & { isActive: boolean }>`
   justify-content: center;
   text-align: center;
   align-items: center;
-  width: 56px;
+  min-width: 56px;
   height: 32px;
   border-radius: 24px;
   padding: 6px 14px;
