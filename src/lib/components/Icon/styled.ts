@@ -7,7 +7,7 @@ export const StyledIcon = styled.i<IconProps>`
   background-size: cover;
   background-position: center;
 
-  background-image: url(${({ type }) => `../../../${type}.svg`});
+  background-image: url(${({ type }) => new URL(`./${type}.svg`, import.meta.url).href});
   width: ${({ size }) => size}px;
   height: ${({ size }) => size}px;
 `;
